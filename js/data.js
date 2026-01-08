@@ -1,13 +1,10 @@
 const resumeData = {
     profile: {
         name: "이용원 (iamywl)",
-        education: "경북대학교 컴퓨터학부",
         title: "문제 해결을 즐기며 배포를 통해 가치를 증명하는 인프라 엔지니어",
-        email: "your.email@example.com", 
+        email: "yongdev@gmail.com", 
         github: "iamywl",
-        intro: " test
-        
-        "
+        intro: "test"
     },
     techStack: [
         { name: "Kubernetes", img: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" },
