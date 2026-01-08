@@ -12,7 +12,6 @@ const resumeData = {
         { name: "AWS", img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
         { name: "Ansible", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" },
         { name: "Jenkins", img: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
-        // 로컬에 적어두신 ebpf-icon.svg로 경로 수정
         { name: "eBPF", img: "./ebpf-icon.svg" }, 
         { name: "Docker", img: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" }
     ],
