@@ -5,7 +5,9 @@ const resumeData = {
         title: "문제 해결을 즐기며 배포를 통해 가치를 증명하는 인프라 엔지니어",
         email: "your.email@example.com", 
         github: "iamywl",
-        intro: "국가 보안 연구소와 협업하여 eBPF 기반 컨테이너 보안 기법을 개발하고, 실시간 공격 탐지 F1-Score 99%를 달성했습니다. '정적인 한계를 동적인 기술로 해결'하는 과정에서 성장을 체감하며, K3s와 Ansible을 활용한 인프라 자동화에 능숙합니다."
+        intro: " test
+        
+        "
     },
     techStack: [
         { name: "Kubernetes", img: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" },
@@ -38,6 +40,7 @@ const resumeData = {
         }
     ],
     awards: [
+        { date: "2024.06.27", title: "우수논문상", org: "한국정보과학회" },
         { date: "2024.07.31", title: "대구광역시 공공데이터 활용 창업경진대회 입상", org: "대구디지털혁신진흥원장" },
         { date: "2022.11.20", title: "영남대학교 컨소시엄 창의적 종합 설계 경진대회 동상", org: "영남대학교 공학교육혁신센터" },
         { date: "2022.11.02", title: "2022 전국 대학생 소셜벤처 콩쿠르 우수상", org: "사회적 경제 대학 협의회장" },
