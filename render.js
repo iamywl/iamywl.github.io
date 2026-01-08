@@ -1,11 +1,11 @@
 function renderResume() {
     const app = document.getElementById('resume-app');
-    if (!app) return;
+    if (!app || typeof resumeData === 'undefined') return;
 
     app.innerHTML = `
         <div class="max-w-4xl mx-auto my-12 p-8 sm:p-12 bg-white shadow-2xl rounded-3xl border border-slate-100">
             <header class="mb-12 text-center md:text-left">
-                <h1 class="text-5xl font-extrabold text-slate-900 mb-2">${resumeData.profile.name}</h1>
+                <h1 class="text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">${resumeData.profile.name}</h1>
                 <p class="text-xl font-bold text-blue-600 mb-6">${resumeData.profile.title}</p>
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 text-slate-600 font-medium">
                     <span>📧 ${resumeData.profile.email}</span>
@@ -14,6 +14,9 @@ function renderResume() {
             </header>
 
             <section class="mb-16">
+                <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-8 flex items-center">
+                    OFFICIAL TECH STACK <span class="ml-2 h-px bg-slate-200 flex-grow"></span>
+                </h2>
                 <div class="grid grid-cols-3 md:grid-cols-6 gap-6 text-center">
                     ${resumeData.techStack.map(tech => `
                         <div class="flex flex-col items-center p-2 rounded-xl bg-slate-50 border border-transparent hover:border-blue-200 transition">
@@ -50,12 +53,12 @@ function renderResume() {
                     <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-6">AWARDS</h2>
                     <div class="space-y-4">
                         ${resumeData.awards.map(aw => `
-                            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl">
-                                <div>
-                                    <p class="text-xs font-bold text-slate-800">${aw.title}</p>
+                            <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl hover:bg-white hover:shadow-md transition">
+                                <div class="max-w-[75%]">
+                                    <p class="text-xs font-bold text-slate-800 leading-tight">${aw.title}</p>
                                     <p class="text-[10px] text-slate-400 font-medium">${aw.org}</p>
                                 </div>
-                                <span class="text-[10px] font-black text-slate-300 ml-2">${aw.date}</span>
+                                <span class="text-[10px] font-black text-slate-300 ml-2 whitespace-nowrap">${aw.date}</span>
                             </div>
                         `).join('')}
                     </div>
@@ -64,5 +67,4 @@ function renderResume() {
         </div>
     `;
 }
-
 document.addEventListener('DOMContentLoaded', renderResume);
