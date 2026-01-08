@@ -1,19 +1,13 @@
 const resumeData = {
     profile: {
         name: "이용원 (iamywl)",
+        keyword: "성장을 배포하는 엔지니어",
         title: "문제 해결을 즐기며 배포를 통해 가치를 증명하는 인프라 엔지니어",
         email: "yongdev@gmail.com",
         github: "iamywl",
-        intro: "eBPF 기술을 활용해 컨테이너 보안 탐지 성능을 F1-Score 99%까지 끌어올린 경험이 있습니다. '정적인 한계를 동적인 기술로 해결'하는 과정에 매력을 느끼며, K3s와 Ansible을 활용한 인프라 자동화에 능숙합니다."
+        summary: "eBPF 기술로 보안 성능을 99% 달성한 경험을 바탕으로, 복잡한 인프라 문제를 동적인 기술로 해결하는 데 강점이 있습니다.",
+        fullIntro: "안녕하세요, 시스템의 가시성을 확보하고 효율적인 운영 환경을 구축하는 것에 열정을 가진 이용원입니다. 커널 레벨의 추적 기술인 eBPF를 활용해 컨테이너 보안의 한계를 극복해왔으며, 단순한 구축을 넘어 '자동화'와 '최적화'를 통해 비즈니스 가치를 증명하는 것을 목표로 합니다. 끊임없이 변화하는 인프라 생태계에서 안정성과 혁신 사이의 균형을 잡는 전문가로 성장하고 있습니다."
     },
-    techStack: [
-        { name: "Kubernetes", img: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" },
-        { name: "AWS", img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-        { name: "Ansible", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" },
-        { name: "Jenkins", img: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
-        { name: "eBPF", img: "./ebpf-icon.svg" },
-        { name: "Docker", img: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" }
-    ],
     projects: [
         {
             title: "eBPF 기반 동적 컨테이너 보안 시스템 연구",
@@ -45,5 +39,13 @@ const resumeData = {
         { date: "2021.11.20", title: "더(The) 경북 더(more)과학 해커톤 대회 우수상", org: "경북테크노파크 원장" },
         { date: "2021.08.02", title: "DU 코딩 경진대회 우수상", org: "대구대학교 LINC+ 사업단장" },
         { date: "2016.10.21", title: "2016 추계학술대회 우수논문상", org: "한국멀티미디어학회" }
+    ],
+    techStack: [
+        { name: "Kubernetes", img: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" },
+        { name: "AWS", img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+        { name: "Ansible", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" },
+        { name: "Jenkins", img: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
+        { name: "eBPF", img: "./ebpf-icon.svg" },
+        { name: "Docker", img: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" }
     ]
 };
