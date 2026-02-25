@@ -2,6 +2,9 @@ function renderResume() {
     const app = document.getElementById('resume-app');
     if (!app || typeof resumeData === 'undefined') return;
 
+    // 디버그: 실제로 브라우저에서 로드된 이메일 값 확인
+    try { console.log('DEBUG: resumeData.profile.email =', resumeData?.profile?.email); } catch (e) { console.log('DEBUG: resumeData not available', e); }
+
     app.innerHTML = `
         <div class="max-w-4xl mx-auto my-12 p-8 sm:p-12 bg-white shadow-2xl rounded-3xl border border-slate-100">
             <header class="mb-10 text-center md:text-left">
@@ -10,8 +13,8 @@ function renderResume() {
                 </div>
                 <h1 class="text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">${resumeData.profile.name}</h1>
                 <p class="text-xl font-bold text-slate-500 mb-6 uppercase tracking-widest text-sm">${resumeData.profile.title}</p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-slate-600 font-medium text-sm">
-                    <span>📧 ${resumeData.profile.email}</span>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 text-slate-600 font-medium text-sm">
+                    <span>📧 ${resumeData?.profile?.email || '이메일 없음'}</span>
                     <span>🔗 <a href="https://github.com/${resumeData.profile.github}" target="_blank" class="underline hover:text-blue-600">GitHub</a></span>
                 </div>
             </header>
@@ -65,8 +68,8 @@ function renderResume() {
 
             <section class="mb-20 p-8 bg-blue-50 rounded-3xl border border-blue-100 shadow-inner">
                 <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-6">PHILOSOPHY & EXPERIENCE</h2>
-                <p class="text-md leading-loose text-slate-700 whitespace-pre-line font-medium">
-                    ${resumeData.profile.fullIntro}
+                    <p class="text-md leading-loose text-slate-700 whitespace-pre-line font-medium">
+                    ${resumeData?.profile?.fullIntro || ''}
                 </p>
             </section>
 
