@@ -3,7 +3,7 @@ const resumeData = {
         name: "이용원 (iamywl)",
         keyword: "문제를 정의하고 기술로 해결하는 능동적인 인프라 엔지니어",
         title: "Infrastructure & Security Engineer",
-        email: "yongdev@gmail.com",
+        email: "yongdev1919@gmail.com",
         github: "iamywl",
         summary: "",
         fullIntro: `컨테이너는 경량화된 가상화 기술로 각광받고 있지만, 시스템 콜을 통한 호스트 커널 접근이라는 보안 취약점을 안고 있습니다. 기존의 정적인 접근 방식(Seccomp 등)은 정상적인 서비스 동작을 방해하거나 잠재적 위협에 대응하기 어렵다는 한계가 있었습니다.
