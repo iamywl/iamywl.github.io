@@ -44,8 +44,10 @@ const resumeData = {
             period: "2026.01 - 2026.04",
             description: "제조 실행 시스템(MES) 개발 프로젝트(덱스위버 인턴과정)",
             points: [
+                "AI Native MES 시스템의 핵심 기능인 생산 계획, 실시간 모니터링, 품질 관리 모듈 개발",
+                "CI/CD 파이프라인 구축을 통한 빠른 배포 및 피드백 사이클 확보",
                 "k8s 기반의 마이크로서비스 아키텍처 설계 및 구현",
-                "k8s 기반의 마이크로서비스 아키텍처 설계 및 구현",
+                "Cillum을 활용한 시스템 성능 모니터링 및 최적화로 안정적인 서비스 운영 환경 구현",
             ],
             link: "https://github.com/iamywl/Mes_-DEXWEAVER"
         }
