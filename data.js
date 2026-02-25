@@ -5,14 +5,17 @@ const resumeData = {
         title: "Infrastructure & Security Engineer",
         email: "yongdev1919@gmail.com",
         github: "iamywl",
-        summary: "",
+        summary: "문제해결에 진심인 소프트웨어 인프라엔지어 입니다.",
+
         fullIntro: `컨테이너는 경량화된 가상화 기술로 각광받고 있지만, 시스템 콜을 통한 호스트 커널 접근이라는 보안 취약점을 안고 있습니다. 기존의 정적인 접근 방식(Seccomp 등)은 정상적인 서비스 동작을 방해하거나 잠재적 위협에 대응하기 어렵다는 한계가 있었습니다.
 저는 이를 해결하기 위해 eBPF를 활용한 '동적 관측' 기법을 제안했습니다. 커널 내부의 시스템 콜과 메모리 할당 상태를 실시간으로 트레이싱하여, 기존 규칙 기반 탐지보다 월등한 성능을 입증했습니다. 특히 Python과 같은 고수준 언어를 연동하여 ML 기법을 커널 레벨에 적용하면서도 오버헤드를 10% 미만으로 유지하는 성과를 거두었습니다.
 또한, 모든 인프라는 코드를 기반으로 자동화(IaC)되어야 한다고 믿습니다. 제한된 자원 환경에서도 K3s와 Ansible을 활용해 확장 가능한 구조를 설계하는 등, 비즈니스 상황에 맞는 최적의 인프라 솔루션을 찾아내는 것에 즐거움을 느낍니다.`
     },
+
     projects: [
+
         {
-            title: "컨테이너 보안 기법 연구 (NSR 협업)",
+            title: "컨테이너 보안 기법 연구 (국가 보안 기술 연구소 연구과제)",
             period: "2024. 01 - 2024. 12",
             description: "eBPF를 활용하여 커널 이벤트를 실시간으로 관측하고 취약점을 방어하는 동적 탐지 엔진 개발",
             points: [
@@ -23,9 +26,10 @@ const resumeData = {
             ],
             link: "https://github.com/iamywl/ebpf_NSR.git"
         },
+
         {
-            title: "ROMA: 기숙사 룸메이트 매칭 서비스 인프라",
-            period: "2023. 07 - 2023. 12",
+            title: "ROMA: 기숙사 룸메이트 매칭 서비스 ",
+            period: "2025. 07 - 2025. 12",
             description: "제한된 리소스 환경에서의 고가용성 인프라 구축 및 IaC 기반 자동화",
             points: [
                 "AWS 비용 효율화를 위해 경량화된 K8s인 K3s를 도입하여 엣지 컴퓨팅 환경 최적화",
@@ -36,14 +40,14 @@ const resumeData = {
             link: "https://github.com/iamywl/ROMA"
         },
         {
-            title: "부동산 데이터 서비스 배포 프로젝트 (진행 중)",
-            period: "2026. 여름 예정",
-            description: "대규모 데이터를 다루는 웹 서비스의 AWS 정식 배포 및 운영 자동화 프로젝트",
+            title: "기업용 MES 개발",
+            period: "2026.01 - 2026.04",
+            description: "제조 실행 시스템(MES) 개발 프로젝트(덱스위버 인턴과정)",
             points: [
-                "AWS 클라우드 네이티브 환경으로의 마이그레이션 계획 중",
-                "TBA (To Be Announced)"
+                "k8s 기반의 마이크로서비스 아키텍처 설계 및 구현",
+                "k8s 기반의 마이크로서비스 아키텍처 설계 및 구현",
             ],
-            link: "#"
+            link: "https://github.com/iamywl/Mes_-DEXWEAVER"
         }
     ],
     awards: [
