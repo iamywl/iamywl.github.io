@@ -14,7 +14,7 @@
 <body class="bg-slate-50 text-slate-800">
     <div id="app"></div>
 
-    <script src="js/data.js?v=1"></script>
+    <script src="js/data.js?v=4"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const app = document.getElementById('app');
@@ -95,12 +95,18 @@
                             TECH STACK <span class="ml-2 h-px bg-slate-200 flex-grow"></span>
                         </h2>
                         <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
-                            ${data.techStack.map(tech => `
-                                <div class="flex flex-col items-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:scale-105 transition-transform duration-300">
-                                    <img src="${tech.img}" class="h-10 w-10 object-contain mb-3" onerror="this.style.display='none'">
-                                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter text-center">${tech.name}</span>
-                                </div>
-                            `).join('')}
+                            ${data.techStack.map(tech => {
+                                const iconHtml = tech.svg
+                                    ? tech.svg.replace('<svg', '<svg class="h-10 w-10 object-contain mb-3"')
+                                    : `<img src="${tech.img}" class="h-10 w-10 object-contain mb-3" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<span class=\'text-red-500 text-[9px]\'>Load Fail</span>')">`;
+
+                                return `
+                                    <div class="flex flex-col items-center p-4 rounded-2xl bg-white border border-slate-100 shadow-sm hover:scale-105 transition-transform duration-300">
+                                        ${iconHtml}
+                                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter text-center">${tech.name}</span>
+                                    </div>
+                                `;
+                            }).join('')}
                         </div>
                     </section>
 

@@ -61,11 +61,11 @@ var resumeData = {
         { date: "2021.11.20", title: "경북 과학 해커톤 대회 우수상", org: "경북테크노파크 원장" }
     ],
     techStack: [
-        { name: "Kubernetes", img: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png" },
+        { name: "Kubernetes", img: "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" },
         { name: "AWS", img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
         { name: "Ansible", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" },
         { name: "Jenkins", img: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
         { name: "eBPF", img: "https://avatars.githubusercontent.com/u/72969879?s=200&v=4" },
-        { name: "Docker", img: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" }
+        { name: "Docker", img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" }
     ]
 };
