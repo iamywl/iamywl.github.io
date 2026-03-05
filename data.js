@@ -5,11 +5,11 @@ const resumeData = {
         title: "Infrastructure & Security Engineer",
         email: "yongdev1919@gmail.com",
         github: "iamywl",
-        summary: "문제해결에 진심인 소프트웨어 인프라엔지어 입니다.",
-
-        fullIntro: `컨테이너는 경량화된 가상화 기술로 각광받고 있지만, 시스템 콜을 통한 호스트 커널 접근이라는 보안 취약점을 안고 있습니다. 기존의 정적인 접근 방식(Seccomp 등)은 정상적인 서비스 동작을 방해하거나 잠재적 위협에 대응하기 어렵다는 한계가 있었습니다.
-저는 이를 해결하기 위해 eBPF를 활용한 '동적 관측' 기법을 제안했습니다. 커널 내부의 시스템 콜과 메모리 할당 상태를 실시간으로 트레이싱하여, 기존 규칙 기반 탐지보다 월등한 성능을 입증했습니다. 특히 Python과 같은 고수준 언어를 연동하여 ML 기법을 커널 레벨에 적용하면서도 오버헤드를 10% 미만으로 유지하는 성과를 거두었습니다.
-또한, 모든 인프라는 코드를 기반으로 자동화(IaC)되어야 한다고 믿습니다. 제한된 자원 환경에서도 K3s와 Ansible을 활용해 확장 가능한 구조를 설계하는 등, 비즈니스 상황에 맞는 최적의 인프라 솔루션을 찾아내는 것에 즐거움을 느낍니다.`
+        summary: "문제해결을 좋아하는 시스템 엔지어를 꿈꾸는 사람입니다.",
+        fullIntro: `
+        컨테이너는 경량화된 가상화 기술로 각광받고 있지만, 시스템 콜을 통한 호스트 커널 접근이라는 보안 취약점을 안고 있습니다. 기존의 정적인 접근 방식(Seccomp 등)은 정상적인 서비스 동작을 방해하거나 잠재적 위협에 대응하기 어렵다는 한계가 있었습니다.
+        저는 이를 해결하기 위해 eBPF를 활용한 '동적 관측' 기법을 제안했습니다. 커널 내부의 시스템 콜과 메모리 할당 상태를 실시간으로 트레이싱하여, 기존 규칙 기반 탐지보다 월등한 성능을 입증했습니다. 특히 Python과 같은 고수준 언어를 연동하여 ML 기법을 커널 레벨에 적용하면서도 오버헤드를 10% 미만으로 유지하는 성과를 거두었습니다.
+        또한, 모든 인프라는 코드를 기반으로 자동화(IaC)되어야 한다고 믿습니다. 제한된 자원 환경에서도 K3s와 Ansible을 활용해 확장 가능한 구조를 설계하는 등, 비즈니스 상황에 맞는 최적의 인프라 솔루션을 찾아내는 것에 즐거움을 느낍니다.`
     },
 
     projects: [
@@ -65,7 +65,7 @@ const resumeData = {
         { name: "AWS", img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
         { name: "Ansible", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" },
         { name: "Jenkins", img: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
-        { name: "eBPF", img: "./ebpf-icon.svg" },
+        { name: "eBPF", img: "https://avatars.githubusercontent.com/u/72969879?s=200&v=4" },
         { name: "Docker", img: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" }
     ]
 };
