@@ -9,5 +9,6 @@ else
   git push origin main
   
   echo "--------------------------------------------------------"
-  echo "✅ 푸시 완료! 잠시 후 https://iamywl.github.io 에서 확인하세요."
+  echo "✅ 푸시 완료! GitHub Actions 배포가 완료될 때까지(약 1~2분) 기다려주세요."
+  echo "👉 https://iamywl.github.io 접속 후 'Ctrl + Shift + R' (강력 새로고침)을 해보세요."
 fi
