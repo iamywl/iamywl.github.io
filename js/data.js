@@ -65,7 +65,7 @@ var resumeData = {
         { name: "AWS", img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
         { name: "Ansible", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" },
         { name: "Jenkins", img: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
-        { name: "eBPF", img: "https://avatars.githubusercontent.com/u/72969879?s=200&v=4" },
+        { name: "eBPF", img: "images/ebpf-icon.png" },
         { name: "Docker", img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" }
     ]
 };
