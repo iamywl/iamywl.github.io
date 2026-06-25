@@ -12,6 +12,13 @@ var resumeData = {
         또한, 모든 인프라는 코드를 기반으로 자동화(IaC)되어야 한다고 믿습니다. 제한된 자원 환경에서도 K3s와 Ansible을 활용해 확장 가능한 구조를 설계하는 등, 비즈니스 상황에 맞는 최적의 인프라 솔루션을 찾아내는 것에 즐거움을 느낍니다.`
     },
 
+    stats: [
+        { value: "99%", label: "Race Condition 탐지 F1-Score" },
+        { value: "<10%", label: "eBPF 실시간 탐지 오버헤드" },
+        { value: "6", label: "수상 경력" },
+        { value: "3+", label: "핵심 프로젝트" }
+    ],
+
     projects: [
 
         {
@@ -28,16 +35,16 @@ var resumeData = {
         },
 
         {
-            title: "ROMA: 기숙사 룸메이트 매칭 서비스 ",
-            period: "2025. 07 - 2025. 12",
-            description: "제한된 리소스 환경에서의 고가용성 인프라 구축 및 IaC 기반 자동화",
+            title: "Apple Silicon 단일 머신 멀티클러스터 K8s 자동화 (IaC)",
+            period: "2026. 03 - 2026. 06",
+            description: "맥북 한 대 위에 프로덕션급 멀티클러스터 쿠버네티스 환경을 단일 스크립트로 구축하는 IaC 플랫폼",
             points: [
-                "AWS 비용 효율화를 위해 경량화된 K8s인 K3s를 도입하여 엣지 컴퓨팅 환경 최적화",
-                "Ansible 기반의 IaC를 적용하여 인스턴스의 스케일 인/아웃이 용이한 자동화 구조 설계",
-                "Jenkins를 활용한 CI/CD 파이프라인 구축으로 배포 프로세스 가속화",
-                "모든 인프라 설정의 코드화를 통해 환경 복구 및 확장성 보장"
+                "수십 번의 SSH·수백 개 명령을 단일 ./demo.sh로 대체, 4개 독립 클러스터 구성을 15~20분에 자동화(수동 1~2시간 대비)",
+                "Tart 하이퍼바이저 + containerd + Istio 메시 + Cilium eBPF + Prometheus/Grafana 7계층 아키텍처 설계",
+                "Cilium L3/L4/L7 정책·Sealed Secrets·OPA Gatekeeper·RBAC 기반 Zero-Trust 보안 모델 구현 및 컴플라이언스 자동 검증",
+                "Tart DHCP IP 변동 자동 복구(apiserver 인증서·kubelet·CNI 갱신)로 무중단 재부팅 지원 + SRE 대시보드(6페이지/11 API) 제공"
             ],
-            link: "https://github.com/iamywl/ROMA"
+            link: "https://github.com/iamywl/IaC_apple_sillicon"
         },
         {
             title: "기업용 MES 개발",
