@@ -6,144 +6,106 @@
     <title>iamywl · Infrastructure &amp; Security Architect</title>
     <meta name="description" content="Linux Kernel 6.x & eBPF, Kubernetes Multi-Cluster, Cloud Native & DevSecOps 시스템 아키텍트 iamywl의 엔지니어링 포트폴리오">
 
-    <!-- Pretendard Font & FontAwesome Icons -->
+    <!-- Pretendard & JetBrains Mono Fonts -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
         /* ------------------------------------------------------------------
-           Pure Minimalist Monochrome & Zinc Tokens (Zero Blue Palette)
+           Linear & Vercel Bento Design Tokens
         ------------------------------------------------------------------ */
         :root {
-            /* Light Theme: Pure Monochrome & Apple Keynote Minimal */
+            /* Accent: Cyber Emerald & Electric Violet */
+            --accent-emerald: #10B981;
+            --accent-emerald-tint: rgba(16, 185, 129, 0.12);
+            --accent-emerald-border: rgba(16, 185, 129, 0.3);
+            --accent-violet: #8B5CF6;
+            --accent-violet-tint: rgba(139, 92, 246, 0.12);
+            --accent-cyan: #06B6D4;
+            --accent-cyan-tint: rgba(6, 182, 212, 0.12);
+            --accent-amber: #F59E0B;
+            --accent-amber-tint: rgba(245, 158, 11, 0.12);
+
+            /* Dark Mode Default (Linear / Vercel Deep Space) */
+            --bg-page: #0B0F17;
+            --bg-page-mesh: radial-gradient(circle 800px at 15% -10%, rgba(16, 185, 129, 0.08), transparent 70%),
+                            radial-gradient(circle 700px at 85% 20%, rgba(139, 92, 246, 0.06), transparent 70%),
+                            radial-gradient(circle 600px at 50% 90%, rgba(6, 182, 212, 0.05), transparent 70%);
+
+            --bg-surface: rgba(17, 24, 39, 0.75);
+            --bg-surface-elevated: rgba(30, 41, 59, 0.65);
+            --bg-terminal: #070A0F;
+            --border-surface: rgba(255, 255, 255, 0.08);
+            --border-surface-hover: rgba(16, 185, 129, 0.4);
+
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-tertiary: #94A3B8;
+            --text-muted: #64748B;
+
+            --btn-primary-bg: #10B981;
+            --btn-primary-text: #042F2E;
+            --btn-primary-hover: #059669;
+
+            --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+            --btn-secondary-text: #F8FAFC;
+            --btn-secondary-border: rgba(255, 255, 255, 0.12);
+            --btn-secondary-hover: rgba(255, 255, 255, 0.1);
+
+            --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.4);
+            --card-shadow-hover: 0 16px 36px -4px rgba(0, 0, 0, 0.7), 0 0 20px rgba(16, 185, 129, 0.15);
+
+            --topbar-bg: rgba(11, 15, 23, 0.85);
+            --topbar-border: rgba(255, 255, 255, 0.08);
+
+            --chip-bg: rgba(255, 255, 255, 0.06);
+            --chip-border: rgba(255, 255, 255, 0.1);
+            --chip-text: #CBD5E1;
+        }
+
+        [data-theme="light"] {
+            /* Light Mode (Crisp Minimalist Studio) */
             --bg-page: #FAFAFA;
-            --bg-card: #FFFFFF;
-            --bg-card-subtle: #F4F4F5;
-            --border-default: #E4E4E7;
-            --border-subtle: #F4F4F5;
-            --border-hover: #71717A;
+            --bg-page-mesh: radial-gradient(circle 800px at 15% -10%, rgba(16, 185, 129, 0.05), transparent 70%),
+                            radial-gradient(circle 700px at 85% 20%, rgba(139, 92, 246, 0.04), transparent 70%);
 
-            --text-primary: #09090B;
-            --text-secondary: #27272A;
-            --text-tertiary: #52525B;
-            --text-muted: #71717A;
+            --bg-surface: #FFFFFF;
+            --bg-surface-elevated: #F8FAFC;
+            --bg-terminal: #0F172A;
+            --border-surface: #E2E8F0;
+            --border-surface-hover: rgba(16, 185, 129, 0.5);
 
-            --btn-primary-bg: #09090B;
+            --text-primary: #0F172A;
+            --text-secondary: #334155;
+            --text-tertiary: #64748B;
+            --text-muted: #94A3B8;
+
+            --btn-primary-bg: #0F172A;
             --btn-primary-text: #FFFFFF;
-            --btn-primary-hover: #27272A;
+            --btn-primary-hover: #1E293B;
 
             --btn-secondary-bg: #FFFFFF;
-            --btn-secondary-text: #09090B;
-            --btn-secondary-border: #E4E4E7;
-            --btn-secondary-hover: #F4F4F5;
+            --btn-secondary-text: #0F172A;
+            --btn-secondary-border: #E2E8F0;
+            --btn-secondary-hover: #F1F5F9;
 
-            --topbar-bg: rgba(250, 250, 250, 0.92);
-            --topbar-border: #E4E4E7;
+            --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+            --card-shadow-hover: 0 14px 32px -4px rgba(15, 23, 42, 0.12), 0 0 16px rgba(16, 185, 129, 0.12);
 
-            --chip-bg: #F4F4F5;
-            --chip-text: #27272A;
-            --chip-border: #E4E4E7;
+            --topbar-bg: rgba(250, 250, 250, 0.88);
+            --topbar-border: #E2E8F0;
 
-            --tag-accent-bg: #09090B;
-            --tag-accent-text: #FFFFFF;
-
-            --featured-card-bg: #F4F4F5;
-            --featured-card-border: #D4D4D8;
-
-            --metric-color: #09090B;
-
-            --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
-            --card-shadow-hover: 0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
-        }
-
-        [data-theme="dark"] {
-            /* Dark Theme: Pure Obsidian & Platinum Monochrome */
-            --bg-page: #09090B;
-            --bg-card: #121215;
-            --bg-card-subtle: #1C1C20;
-            --border-default: #27272A;
-            --border-subtle: #1C1C20;
-            --border-hover: #52525B;
-
-            --text-primary: #FAFAFA;
-            --text-secondary: #E4E4E7;
-            --text-tertiary: #A1A1AA;
-            --text-muted: #71717A;
-
-            --btn-primary-bg: #FAFAFA;
-            --btn-primary-text: #09090B;
-            --btn-primary-hover: #E4E4E7;
-
-            --btn-secondary-bg: #121215;
-            --btn-secondary-text: #FAFAFA;
-            --btn-secondary-border: #27272A;
-            --btn-secondary-hover: #1C1C20;
-
-            --topbar-bg: rgba(9, 9, 11, 0.92);
-            --topbar-border: #27272A;
-
-            --chip-bg: #1C1C20;
-            --chip-text: #E4E4E7;
-            --chip-border: #27272A;
-
-            --tag-accent-bg: #FAFAFA;
-            --tag-accent-text: #09090B;
-
-            --featured-card-bg: #16161A;
-            --featured-card-border: #3F3F46;
-
-            --metric-color: #FAFAFA;
-
-            --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-            --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.7);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --bg-page: #09090B;
-                --bg-card: #121215;
-                --bg-card-subtle: #1C1C20;
-                --border-default: #27272A;
-                --border-subtle: #1C1C20;
-                --border-hover: #52525B;
-
-                --text-primary: #FAFAFA;
-                --text-secondary: #E4E4E7;
-                --text-tertiary: #A1A1AA;
-                --text-muted: #71717A;
-
-                --btn-primary-bg: #FAFAFA;
-                --btn-primary-text: #09090B;
-                --btn-primary-hover: #E4E4E7;
-
-                --btn-secondary-bg: #121215;
-                --btn-secondary-text: #FAFAFA;
-                --btn-secondary-border: #27272A;
-                --btn-secondary-hover: #1C1C20;
-
-                --topbar-bg: rgba(9, 9, 11, 0.92);
-                --topbar-border: #27272A;
-
-                --chip-bg: #1C1C20;
-                --chip-text: #E4E4E7;
-                --chip-border: #27272A;
-
-                --tag-accent-bg: #FAFAFA;
-                --tag-accent-text: #09090B;
-
-                --featured-card-bg: #16161A;
-                --featured-card-border: #3F3F46;
-
-                --metric-color: #FAFAFA;
-
-                --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-                --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.7);
-            }
+            --chip-bg: #F1F5F9;
+            --chip-border: #E2E8F0;
+            --chip-text: #334155;
         }
 
         /* ------------------------------------------------------------------
-           Base Typography & Layout Reset
+           Base Typography & Reset
         ------------------------------------------------------------------ */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -157,31 +119,51 @@
         }
 
         body {
-            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", sans-serif;
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
             background-color: var(--bg-page);
+            background-image: var(--bg-page-mesh);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.65;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.02em;
             word-break: keep-all;
             overflow-wrap: break-word;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
-            transition: background-color .2s ease, color .2s ease;
+            transition: background-color .25s ease, color .25s ease;
+            overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        a { color: inherit; text-decoration: none; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
 
         .container {
-            max-width: 760px;
+            max-width: 820px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* ------------------------------------------------------------------
-           Navigation Topbar
+           Bento Card Primitive (Squircle & Frosted Glass)
+        ------------------------------------------------------------------ */
+        .bento-card {
+            background: var(--bg-surface);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-surface);
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            transition: transform .22s cubic-bezier(.16,1,.3,1), box-shadow .22s, border-color .22s;
+        }
+        .bento-card:hover {
+            border-color: var(--border-surface-hover);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ------------------------------------------------------------------
+           Sticky Minimal Navigation
         ------------------------------------------------------------------ */
         .topbar {
             position: sticky;
@@ -191,35 +173,40 @@
             -webkit-backdrop-filter: blur(16px);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--topbar-border);
-            transition: background .2s, border-color .2s;
+            transition: background .25s, border-color .25s;
         }
         .topbar .inner {
-            max-width: 760px;
+            max-width: 820px;
             margin: 0 auto;
             padding: 14px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .topbar-brand {
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #10B981, #06B6D4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #042F2E;
+            font-weight: 800;
+        }
+        .brand-handle {
             font-weight: 800;
             font-size: 1.05rem;
             letter-spacing: -0.03em;
             color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
-        .topbar-brand-badge {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            background: var(--chip-bg);
-            border: 1px solid var(--chip-border);
-            padding: 2px 7px;
-            border-radius: 6px;
-        }
-        .topbar-actions {
+        .nav-actions {
             display: flex;
             align-items: center;
             gap: 6px;
@@ -239,146 +226,137 @@
             -webkit-tap-highlight-color: transparent;
         }
         .icon-btn:hover {
-            background: var(--bg-card-subtle);
+            background: var(--chip-bg);
             color: var(--text-primary);
-        }
-        .icon-btn:active {
-            transform: scale(0.94);
+            border-color: var(--chip-border);
         }
 
         /* ------------------------------------------------------------------
-           Hero Section (Authoritative Monochrome)
+           Hero Section (Linear Identity Statement)
         ------------------------------------------------------------------ */
         .hero {
-            padding-top: 56px;
-            padding-bottom: 40px;
+            padding-top: 64px;
+            padding-bottom: 48px;
         }
-        .hero-tag {
+        .status-badge {
             display: inline-flex;
             align-items: center;
-            font-size: 0.8125rem;
+            gap: 8px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--text-tertiary);
-            margin-bottom: 12px;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+            background: var(--accent-emerald-tint);
+            color: var(--accent-emerald);
+            border: 1px solid var(--accent-emerald-border);
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-emerald);
+            box-shadow: 0 0 8px var(--accent-emerald);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
         }
         .hero-title {
-            font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+            font-size: clamp(2.4rem, 6vw, 3.6rem);
             font-weight: 800;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
             color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-        .hero-role {
-            font-size: clamp(1.15rem, 2.8vw, 1.35rem);
-            font-weight: 700;
-            color: var(--text-secondary);
             margin-bottom: 16px;
+        }
+        .hero-statement {
+            font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+            font-weight: 600;
             letter-spacing: -0.02em;
+            line-height: 1.45;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
         }
-        .hero-desc {
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.7;
+        .hero-statement .gradient-text {
+            background: linear-gradient(135deg, #10B981, #06B6D4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bio {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.75;
             color: var(--text-tertiary);
-            max-width: 58ch;
-            margin-bottom: 28px;
+            max-width: 62ch;
+            margin-bottom: 32px;
         }
-        .hero-actions {
+        .hero-ctas {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            height: 46px;
-            padding: 0 20px;
+            height: 48px;
+            padding: 0 22px;
             border-radius: 12px;
             font-size: 0.9375rem;
             font-weight: 700;
             cursor: pointer;
             border: 1px solid transparent;
-            transition: background-color .15s, transform .12s, border-color .15s;
+            transition: transform .15s cubic-bezier(.2,.8,.2,1), background-color .15s, border-color .15s, box-shadow .15s;
             -webkit-tap-highlight-color: transparent;
         }
-        .btn:active {
-            transform: scale(0.97);
-        }
+        .btn:active { transform: scale(0.97); }
         .btn-primary {
             background-color: var(--btn-primary-bg);
             color: var(--btn-primary-text);
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
         }
         .btn-primary:hover {
             background-color: var(--btn-primary-hover);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
         }
         .btn-secondary {
             background-color: var(--btn-secondary-bg);
             color: var(--btn-secondary-text);
             border: 1px solid var(--btn-secondary-border);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
         }
         .btn-secondary:hover {
             background-color: var(--btn-secondary-hover);
         }
 
         /* ------------------------------------------------------------------
-           Section Common
-        ------------------------------------------------------------------ */
-        section {
-            margin-top: 56px;
-        }
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 18px;
-        }
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            color: var(--text-primary);
-        }
-        .section-count {
-            font-size: 0.84rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        /* ------------------------------------------------------------------
-           Key Metrics (4 Solid Monochrome Cards)
+           Metrics Bento Grid (4 Hard-Hitting Telemetry Cards)
         ------------------------------------------------------------------ */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 12px;
+            margin-top: 10px;
         }
         .metric-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-default);
-            border-radius: 14px;
-            padding: 20px 14px;
+            padding: 22px 16px;
             text-align: center;
-            box-shadow: var(--card-shadow);
-            transition: border-color .15s, transform .15s;
         }
-        .metric-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-2px);
-        }
-        .metric-value {
-            font-size: clamp(1.6rem, 3.8vw, 2.1rem);
+        .metric-val {
+            font-size: clamp(1.75rem, 4vw, 2.3rem);
             font-weight: 800;
             letter-spacing: -0.03em;
             line-height: 1.1;
-            color: var(--metric-color);
+            color: var(--accent-emerald);
             margin-bottom: 6px;
         }
-        .metric-label {
+        .metric-lbl {
             font-size: 0.78125rem;
             font-weight: 600;
             color: var(--text-tertiary);
@@ -386,101 +364,245 @@
         }
 
         /* ------------------------------------------------------------------
-           About & Engineering Philosophy Card
+           Section Common Header
         ------------------------------------------------------------------ */
-        .card-panel {
-            background: var(--bg-card);
-            border: 1px solid var(--border-default);
-            border-radius: 16px;
-            padding: 28px 30px;
-            box-shadow: var(--card-shadow);
+        section {
+            margin-top: 72px;
         }
-        .about-quote {
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            line-height: 1.55;
-        }
-        .about-text p {
-            font-size: 0.96875rem;
-            font-weight: 400;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 14px;
-        }
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ------------------------------------------------------------------
-           Flagship Project Cards
-        ------------------------------------------------------------------ */
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-default);
-            border-radius: 16px;
-            padding: 26px 28px;
-            box-shadow: var(--card-shadow);
-            transition: border-color .2s, transform .2s, box-shadow .2s;
-        }
-        .project-card:hover {
-            border-color: var(--border-hover);
-            box-shadow: var(--card-shadow-hover);
-            transform: translateY(-2px);
-        }
-        .project-meta-row {
+        .section-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            gap: 10px;
+            align-items: baseline;
+            margin-bottom: 22px;
         }
-        .badge-pill {
-            font-size: 0.75rem;
+        .section-eyebrow {
+            font-size: 0.8125rem;
             font-weight: 700;
-            color: var(--chip-text);
-            background: var(--chip-bg);
-            border: 1px solid var(--chip-border);
-            padding: 3px 9px;
-            border-radius: 6px;
-            letter-spacing: -0.01em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-emerald);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
         }
-        .project-date {
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+        }
+        .section-counter {
             font-size: 0.8125rem;
             font-weight: 600;
             color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
         }
-        .project-title {
-            font-size: 1.25rem;
+
+        /* ------------------------------------------------------------------
+           Tech Stacks Bento Grid (Role-Based Architecture)
+        ------------------------------------------------------------------ */
+        .tech-bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .tech-bento-card {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .tech-bento-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .tech-bento-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tech-bento-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            background: var(--accent-emerald-tint);
+            color: var(--accent-emerald);
+            border: 1px solid var(--accent-emerald-border);
+            flex-shrink: 0;
+        }
+        .tech-bento-card:nth-child(2) .tech-bento-icon {
+            background: var(--accent-cyan-tint);
+            color: var(--accent-cyan);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+        .tech-bento-card:nth-child(3) .tech-bento-icon {
+            background: var(--accent-violet-tint);
+            color: var(--accent-violet);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .tech-bento-card:nth-child(4) .tech-bento-icon {
+            background: var(--accent-amber-tint);
+            color: var(--accent-amber);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+        .tech-bento-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+        .tech-bento-desc {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
+            line-height: 1.45;
+        }
+        .tech-items-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .tech-stack-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-surface);
+            transition: background .15s, border-color .15s;
+        }
+        .tech-stack-row:hover {
+            border-color: var(--border-surface-hover);
+        }
+        .tech-stack-name {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .tech-stack-context {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
+            text-align: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ------------------------------------------------------------------
+           Featured Projects (Case Study Format + Terminal Mockup)
+        ------------------------------------------------------------------ */
+        .project-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .case-study-card {
+            padding: 30px;
+            overflow: hidden;
+        }
+        .case-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .case-domain-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-emerald);
+            background: var(--accent-emerald-tint);
+            border: 1px solid var(--accent-emerald-border);
+            padding: 4px 11px;
+            border-radius: 999px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.01em;
+        }
+        .case-role-chip {
+            font-size: 0.78125rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .case-title {
+            font-size: 1.35rem;
             font-weight: 800;
             letter-spacing: -0.025em;
+            line-height: 1.35;
             color: var(--text-primary);
             margin-bottom: 8px;
-            line-height: 1.35;
         }
-        .project-summary {
+        .case-headline {
             font-size: 0.96875rem;
             font-weight: 500;
             color: var(--text-secondary);
             margin-bottom: 18px;
             line-height: 1.6;
         }
-        .project-bullets {
+
+        /* Terminal Mockup Window */
+        .terminal-window {
+            background: var(--bg-terminal);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        .terminal-header {
+            background: rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 9px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .traffic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #EF4444; }
+        .dot-yellow { background: #F59E0B; }
+        .dot-green { background: #10B981; }
+        .terminal-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            margin-left: 6px;
+        }
+        .terminal-body {
+            padding: 14px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.65;
+            color: #E2E8F0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* Key Engineering Achievements */
+        .case-bullets {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 9px;
-            margin-bottom: 20px;
-            padding-left: 2px;
+            gap: 10px;
+            margin-bottom: 22px;
         }
-        .project-bullets li {
+        .case-bullets li {
             display: flex;
             align-items: flex-start;
             gap: 10px;
@@ -488,165 +610,187 @@
             line-height: 1.6;
             color: var(--text-secondary);
         }
-        .project-bullets li::before {
-            content: "•";
-            color: var(--text-muted);
-            font-weight: bold;
-            font-size: 1.1rem;
-            line-height: 1.4;
+        .case-bullets li i {
+            color: var(--accent-emerald);
+            margin-top: 6px;
+            font-size: 0.72rem;
             flex-shrink: 0;
         }
-        .project-link {
+
+        /* Project Metric Tags */
+        .case-metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 14px;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-surface);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .metric-item {
+            text-align: center;
+        }
+        .metric-item-val {
+            font-size: 1rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-emerald);
+            line-height: 1.2;
+        }
+        .metric-item-lbl {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            margin-top: 3px;
+        }
+
+        .case-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.90625rem;
+            font-weight: 700;
+            color: var(--accent-emerald);
+            transition: gap .15s;
+        }
+        .case-link-btn:hover {
+            gap: 12px;
+        }
+
+        /* ------------------------------------------------------------------
+           Honors & Awards (Case Study Dossier Format)
+        ------------------------------------------------------------------ */
+        .awards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .award-spotlight-bento {
+            padding: 26px 28px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(6, 182, 212, 0.04) 100%);
+            border: 1px solid var(--accent-emerald-border);
+        }
+        .award-spotlight-bento:hover {
+            box-shadow: 0 16px 36px -4px rgba(16, 185, 129, 0.2);
+        }
+        .award-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+        .award-badge-pill {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.90625rem;
+            padding: 4px 11px;
+            border-radius: 999px;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--border-default);
-            padding-bottom: 2px;
-            transition: border-color .15s, gap .15s;
+            background: var(--accent-emerald-tint);
+            color: var(--accent-emerald);
+            border: 1px solid var(--accent-emerald-border);
+            font-family: 'JetBrains Mono', monospace;
         }
-        .project-link:hover {
-            gap: 10px;
-            border-color: var(--text-primary);
-        }
-
-        /* ------------------------------------------------------------------
-           Honors & Awards (Resume Dossier Format - Zero Blue)
-        ------------------------------------------------------------------ */
-        .awards-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-default);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-        .award-item {
-            padding: 22px 26px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 18px;
-            border-bottom: 1px solid var(--border-subtle);
-            transition: background-color .15s;
-        }
-        .award-item:last-child {
-            border-bottom: none;
-        }
-        .award-item:hover {
-            background-color: var(--bg-card-subtle);
-        }
-        .award-item.featured {
-            background-color: var(--featured-card-bg);
-            border-bottom: 1px solid var(--featured-card-border);
-        }
-        .award-main {
-            flex: 1;
-            min-width: 0;
-        }
-        .award-title-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
-        }
-        .award-title {
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-        }
-        .award-item.featured .award-title {
-            font-size: 1.08rem;
-            font-weight: 800;
-        }
-        .award-badge {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--tag-accent-text);
-            background: var(--tag-accent-bg);
-            border: 1px solid transparent;
-            padding: 2px 7px;
-            border-radius: 5px;
-            white-space: nowrap;
-        }
-        .award-org {
-            font-size: 0.84rem;
-            font-weight: 500;
-            color: var(--text-tertiary);
-        }
-        .award-desc {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            margin-top: 6px;
-            line-height: 1.5;
-        }
-        .award-date {
-            font-size: 0.84rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            white-space: nowrap;
-            flex-shrink: 0;
-            padding-top: 2px;
-        }
-
-        /* ------------------------------------------------------------------
-           Technical Arsenal (Bento Architecture)
-        ------------------------------------------------------------------ */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        .tech-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-default);
-            border-radius: 14px;
-            padding: 20px 22px;
-            box-shadow: var(--card-shadow);
-        }
-        .tech-card-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-        .tech-card-icon {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-        .tech-card-title {
-            font-size: 0.96875rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.015em;
-        }
-        .tech-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-        .tech-chip {
+        .award-date-tag {
             font-size: 0.8125rem;
             font-weight: 600;
-            color: var(--chip-text);
+            color: var(--text-tertiary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .award-spotlight-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .award-spotlight-desc {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .award-spotlight-meta {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .award-row-bento {
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .award-row-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+            flex: 1;
+        }
+        .award-mini-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
             background: var(--chip-bg);
+            color: var(--text-secondary);
             border: 1px solid var(--chip-border);
-            padding: 4px 10px;
+            flex-shrink: 0;
+        }
+        .award-row-details {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
+        }
+        .award-row-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .award-row-name {
+            font-size: 0.96875rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: var(--text-primary);
+        }
+        .award-tag-sm {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 7px;
             border-radius: 6px;
+            background: var(--chip-bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--chip-border);
             white-space: nowrap;
+        }
+        .award-row-org {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
         }
 
         /* ------------------------------------------------------------------
            Footer
         ------------------------------------------------------------------ */
         footer {
-            margin-top: 72px;
-            padding: 32px 0 64px;
-            border-top: 1px solid var(--border-default);
+            margin-top: 88px;
+            padding: 36px 0 64px;
+            border-top: 1px solid var(--border-surface);
             text-align: center;
         }
         footer p {
@@ -664,12 +808,12 @@
             bottom: 30px;
             transform: translate(-50%, 20px);
             background: var(--text-primary);
-            color: var(--bg-card);
+            color: var(--bg-page);
             font-size: 0.90625rem;
             font-weight: 600;
-            padding: 12px 20px;
+            padding: 12px 22px;
             border-radius: 12px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
             opacity: 0;
             pointer-events: none;
             transition: opacity .2s, transform .2s cubic-bezier(.2,.8,.2,1);
@@ -681,42 +825,36 @@
         }
 
         /* ------------------------------------------------------------------
+           Scroll Reveal Animation
+        ------------------------------------------------------------------ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+        }
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ------------------------------------------------------------------
            Mobile Responsiveness
         ------------------------------------------------------------------ */
         @media (max-width: 767px) {
-            .container {
-                padding: 0 18px;
-            }
-            .hero {
-                padding-top: 40px;
-                padding-bottom: 30px;
-            }
-            .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-            .card-panel, .project-card {
-                padding: 20px 18px;
-            }
-            .award-item {
-                padding: 18px 18px;
-            }
-            .hero-actions .btn {
-                flex: 1;
-                height: 48px;
-            }
+            .container { padding: 0 18px; }
+            .hero { padding-top: 40px; padding-bottom: 32px; }
+            section { margin-top: 56px; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .tech-bento-grid { grid-template-columns: 1fr; }
+            .case-study-card { padding: 22px 18px; }
+            .case-metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .hero-ctas .btn { flex: 1; height: 50px; }
+            .award-row-bento { padding: 16px 18px; }
         }
 
         @media (max-width: 480px) {
-            .award-item {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .award-date {
-                font-size: 0.78rem;
-            }
+            .award-row-bento { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .award-date-tag { margin-left: 50px; }
         }
     </style>
 </head>
@@ -724,11 +862,11 @@
     <!-- Top Navigation -->
     <nav class="topbar">
         <div class="inner">
-            <div class="topbar-brand">
-                <span id="navName">iamywl</span>
-                <span class="topbar-brand-badge">SRE · Infra</span>
-            </div>
-            <div class="topbar-actions">
+            <a href="#" class="brand-link">
+                <div class="brand-avatar">YW</div>
+                <span class="brand-handle" id="navName">@iamywl</span>
+            </a>
+            <div class="nav-actions">
                 <button class="icon-btn" id="themeToggle" title="테마 전환"><i class="fas fa-moon"></i></button>
                 <button class="icon-btn" id="navCopy" title="이메일 복사"><i class="fas fa-envelope"></i></button>
                 <a class="icon-btn" id="navGithub" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
@@ -739,30 +877,31 @@
     <div class="container" id="app"></div>
     <div class="toast" id="toast"></div>
 
-    <script src="js/data.js?v=13"></script>
+    <script src="js/data.js?v=14"></script>
     <script>
-        // 테마 관리 (다크모드 / 화이트모드)
+        // 테마 관리 (다크모드 기본 & 시스템 연동)
         const initTheme = () => {
             const saved = localStorage.getItem('theme');
             if (saved) {
                 document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.setAttribute('data-theme', 'light');
             }
             updateThemeIcon();
         };
 
         const updateThemeIcon = () => {
             const current = document.documentElement.getAttribute('data-theme');
-            const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            const isLight = current === 'light';
             const icon = document.querySelector('#themeToggle i');
             if (icon) {
-                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
             }
         };
 
         document.getElementById('themeToggle')?.addEventListener('click', () => {
             const current = document.documentElement.getAttribute('data-theme');
-            const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            const next = isDark ? 'light' : 'dark';
+            const next = current === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             updateThemeIcon();
@@ -773,7 +912,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const app = document.getElementById('app');
             if (typeof resumeData === 'undefined') {
-                app.innerHTML = '<p style="text-align:center;padding:80px 0;color:#71717A">데이터를 불러올 수 없습니다. (js/data.js 확인 필요)</p>';
+                app.innerHTML = '<p style="text-align:center;padding:80px 0;color:#94A3B8">데이터를 불러올 수 없습니다. (js/data.js 확인 필요)</p>';
                 return;
             }
             const d = resumeData;
@@ -785,131 +924,213 @@
             document.getElementById('navGithub').href = 'https://github.com/' + d.profile.github;
 
             app.innerHTML = `
-                <!-- 1. Hero -->
-                <header class="hero">
-                    <span class="hero-tag">Infrastructure &amp; Security Engineering</span>
+                <!-- 1. Hero Section -->
+                <header class="hero reveal">
+                    <div>
+                        <span class="status-badge">
+                            <span class="status-dot"></span> ${esc(d.profile.status)}
+                        </span>
+                    </div>
                     <h1 class="hero-title">${esc(d.profile.name)}</h1>
-                    <p class="hero-role">${esc(d.profile.title)}</p>
-                    <p class="hero-desc">${esc(d.profile.summary)}</p>
-                    <div class="hero-actions">
+                    <p class="hero-statement">
+                        <span class="gradient-text">${esc(d.profile.headline)}</span>
+                    </p>
+                    <p class="hero-bio">${esc(d.profile.summary)}</p>
+                    <div class="hero-ctas">
                         <a class="btn btn-primary" href="https://github.com/${esc(d.profile.github)}" target="_blank" rel="noopener">
                             <i class="fab fa-github"></i> GitHub 프로필
                         </a>
                         <button class="btn btn-secondary" id="copyEmail" data-email="${esc(d.profile.email)}">
                             <i class="fas fa-envelope"></i> 이메일 복사
                         </button>
+                        <a class="btn btn-secondary" href="#projects">
+                            <i class="fas fa-code-branch"></i> 프로젝트 둘러보기
+                        </a>
                     </div>
                 </header>
 
-                <!-- 2. Key Metrics -->
+                <!-- 2. Key Metrics Bento -->
                 ${Array.isArray(d.stats) && d.stats.length ? `
-                <section>
+                <section class="reveal">
                     <div class="metrics-grid">
                         ${d.stats.map(s => `
-                            <div class="metric-card">
-                                <div class="metric-value">${esc(s.value)}</div>
-                                <div class="metric-label">${esc(s.label)}</div>
+                            <div class="metric-card bento-card">
+                                <div class="metric-val mono">${esc(s.value)}</div>
+                                <div class="metric-lbl">${esc(s.label)}</div>
                             </div>
                         `).join('')}
                     </div>
                 </section>` : ''}
 
-                <!-- 3. Engineering Philosophy -->
-                <section>
+                <!-- 3. Tech Stacks Bento (Role-Based Architecture) -->
+                ${Array.isArray(d.techBento) && d.techBento.length ? `
+                <section class="reveal">
                     <div class="section-header">
-                        <h2 class="section-title">엔지니어링 철학</h2>
-                    </div>
-                    <div class="card-panel">
-                        <h3 class="about-quote">"문제를 정의하고 시스템 레벨에서 측정 가능하게 해결합니다."</h3>
-                        <div class="about-text">
-                            ${paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
+                        <div>
+                            <span class="section-eyebrow"><i class="fas fa-cubes-stacked"></i> Technical Arsenal</span>
+                            <h2 class="section-title">스택 벤토 그리드 (Role-Based Architecture)</h2>
                         </div>
                     </div>
-                </section>
-
-                <!-- 4. Flagship Projects -->
-                <section>
-                    <div class="section-header">
-                        <h2 class="section-title">핵심 프로젝트</h2>
-                        <span class="section-count">${d.projects.length}개 프로젝트</span>
-                    </div>
-                    <div class="project-list">
-                        ${d.projects.map(pj => `
-                            <article class="project-card">
-                                <div class="project-meta-row">
-                                    <span class="badge-pill">${esc(pj.badge || 'Engineering')}</span>
-                                    <span class="project-date">${esc(pj.period)}</span>
+                    <div class="tech-bento-grid">
+                        ${d.techBento.map(group => `
+                            <div class="tech-bento-card bento-card">
+                                <div class="tech-bento-head">
+                                    <div class="tech-bento-title-wrap">
+                                        <div class="tech-bento-icon"><i class="${esc(group.icon)}"></i></div>
+                                        <h3 class="tech-bento-title">${esc(group.category)}</h3>
+                                    </div>
                                 </div>
-                                <h3 class="project-title">${esc(pj.title)}</h3>
-                                <p class="project-summary">${esc(pj.description)}</p>
-                                <ul class="project-bullets">
-                                    ${pj.points.map(pt => `<li>${esc(pt)}</li>`).join('')}
+                                <p class="tech-bento-desc">${esc(group.roleDescription)}</p>
+                                <div class="tech-items-flow">
+                                    ${group.items.map(it => `
+                                        <div class="tech-stack-row">
+                                            <span class="tech-stack-name">${esc(it.name)}</span>
+                                            <span class="tech-stack-context">${esc(it.context)}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>` : ''}
+
+                <!-- 4. Featured Projects (Case Study Format) -->
+                <section class="reveal" id="projects">
+                    <div class="section-header">
+                        <div>
+                            <span class="section-eyebrow"><i class="fas fa-terminal"></i> Production Showcases</span>
+                            <h2 class="section-title">핵심 프로젝트 케이스 스터디</h2>
+                        </div>
+                        <span class="section-counter">${d.projects.length} PROJECTS</span>
+                    </div>
+                    <div class="project-feed">
+                        ${d.projects.map(pj => `
+                            <article class="case-study-card bento-card">
+                                <div class="case-meta-row">
+                                    <span class="case-domain-badge">${esc(pj.domain)}</span>
+                                    <span class="case-role-chip">${esc(pj.role)} · ${esc(pj.period)}</span>
+                                </div>
+                                <h3 class="case-title">${esc(pj.title)}</h3>
+                                <p class="case-headline">${esc(pj.headline)}</p>
+
+                                <!-- Visual Terminal Mockup -->
+                                ${pj.terminalSnippet ? `
+                                <div class="terminal-window">
+                                    <div class="terminal-header">
+                                        <span class="traffic-dot dot-red"></span>
+                                        <span class="traffic-dot dot-yellow"></span>
+                                        <span class="traffic-dot dot-green"></span>
+                                        <span class="terminal-title">bash — production verification</span>
+                                    </div>
+                                    <div class="terminal-body">${esc(pj.terminalSnippet)}</div>
+                                </div>
+                                ` : ''}
+
+                                <p style="font-size: 0.90625rem; color: var(--text-tertiary); margin-bottom: 14px; line-height: 1.65;">
+                                    <b>Problem Context:</b> ${esc(pj.problem)}
+                                </p>
+
+                                <!-- Key Engineering Achievements -->
+                                <ul class="case-bullets">
+                                    ${pj.points.map(pt => `
+                                        <li><i class="fas fa-check"></i><span>${esc(pt)}</span></li>
+                                    `).join('')}
                                 </ul>
+
+                                <!-- Metrics Bar -->
+                                ${Array.isArray(pj.metrics) && pj.metrics.length ? `
+                                <div class="case-metrics-bar">
+                                    ${pj.metrics.map(m => `
+                                        <div class="metric-item">
+                                            <div class="metric-item-val">${esc(m.value)}</div>
+                                            <div class="metric-item-lbl">${esc(m.label)}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                ` : ''}
+
                                 ${pj.link && pj.link !== '#' ? `
-                                    <a class="project-link" href="${esc(pj.link)}" target="_blank" rel="noopener">
-                                        GitHub Repository <i class="fas fa-arrow-right"></i>
-                                    </a>
+                                <a class="case-link-btn" href="${esc(pj.link)}" target="_blank" rel="noopener">
+                                    Explore GitHub Repository <i class="fas fa-arrow-right"></i>
+                                </a>
                                 ` : ''}
                             </article>
                         `).join('')}
                     </div>
                 </section>
 
-                <!-- 5. Honors & Research (Dossier Format) -->
-                <section>
+                <!-- 5. Honors & Engineering Awards -->
+                <section class="reveal" id="awards">
                     <div class="section-header">
-                        <h2 class="section-title">공식 수상 및 연구 성과</h2>
-                        <span class="section-count">총 ${d.awards.length}건</span>
+                        <div>
+                            <span class="section-eyebrow"><i class="fas fa-trophy"></i> Verified Track Record</span>
+                            <h2 class="section-title">공식 수상 및 연구 성과</h2>
+                        </div>
+                        <span class="section-counter">${d.awards.length} AWARDS</span>
                     </div>
-                    <div class="awards-container">
+                    <div class="awards-stack">
                         ${d.awards.map((aw, idx) => {
-                            const isFeatured = aw.featured || idx === 0;
-                            return `
-                                <div class="award-item ${isFeatured ? 'featured' : ''}">
-                                    <div class="award-main">
-                                        <div class="award-title-row">
-                                            <span class="award-title">${esc(aw.title)}</span>
-                                            ${aw.badge ? `<span class="award-badge">${esc(aw.badge)}</span>` : ''}
-                                        </div>
-                                        <div class="award-org">${esc(aw.org)}</div>
-                                        ${aw.desc ? `<div class="award-desc">${esc(aw.desc)}</div>` : ''}
+                            if (aw.featured || idx === 0) {
+                                return `
+                                <div class="award-spotlight-bento bento-card">
+                                    <div class="award-top-row">
+                                        <span class="award-badge-pill">${esc(aw.badge)}</span>
+                                        <span class="award-date-tag">${esc(aw.date)}</span>
                                     </div>
-                                    <div class="award-date">${esc(aw.date)}</div>
+                                    <h3 class="award-spotlight-title">${esc(aw.title)}</h3>
+                                    <p class="award-spotlight-desc">${esc(aw.desc)}</p>
+                                    <div class="award-spotlight-meta">
+                                        <i class="fas fa-building" style="opacity: 0.75;"></i> ${esc(aw.org)} · <span class="mono" style="color: var(--accent-emerald);">${esc(aw.metrics)}</span>
+                                    </div>
                                 </div>
-                            `;
+                                `;
+                            } else {
+                                return `
+                                <div class="award-row-bento bento-card">
+                                    <div class="award-row-left">
+                                        <div class="award-mini-icon"><i class="fas fa-award"></i></div>
+                                        <div class="award-row-details">
+                                            <div class="award-row-title-wrap">
+                                                <span class="award-row-name">${esc(aw.title)}</span>
+                                                <span class="award-tag-sm mono">${esc(aw.badge)}</span>
+                                            </div>
+                                            <div class="award-row-org">${esc(aw.org)} · ${esc(aw.desc)}</div>
+                                        </div>
+                                    </div>
+                                    <span class="award-date-tag">${esc(aw.date)}</span>
+                                </div>
+                                `;
+                            }
                         }).join('')}
                     </div>
                 </section>
 
-                <!-- 6. Technical Arsenal -->
-                ${Array.isArray(d.techCategories) && d.techCategories.length ? `
-                <section>
+                <!-- 6. About & Architecture Philosophy -->
+                <section class="reveal">
                     <div class="section-header">
-                        <h2 class="section-title">기술 스택 (Architecture Pillars)</h2>
+                        <div>
+                            <span class="section-eyebrow"><i class="fas fa-compass"></i> Engineering Creed</span>
+                            <h2 class="section-title">아키텍처 철학 (Architecture Philosophy)</h2>
+                        </div>
                     </div>
-                    <div class="tech-grid">
-                        ${d.techCategories.map(cat => `
-                            <div class="tech-card">
-                                <div class="tech-card-header">
-                                    <i class="${esc(cat.icon)} tech-card-icon"></i>
-                                    <h3 class="tech-card-title">${esc(cat.category)}</h3>
-                                </div>
-                                <div class="tech-chips">
-                                    ${cat.skills.map(sk => `<span class="tech-chip">${esc(sk)}</span>`).join('')}
-                                </div>
-                            </div>
-                        `).join('')}
+                    <div class="bento-card" style="padding: 30px;">
+                        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: var(--text-primary); line-height: 1.5;">
+                            "측정할 수 없는 시스템은 방어할 수 없고, 코드로 선언되지 않은 인프라는 신뢰할 수 없습니다."
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.96875rem; color: var(--text-secondary); line-height: 1.8;">
+                            ${paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}
+                        </div>
                     </div>
-                </section>` : ''}
+                </section>
 
                 <!-- Footer -->
                 <footer>
-                    <p>Last Deployed · <span id="deploy-timestamp">2026-10-19T13:12:42Z</span></p>
-                    <p>© 2026 @${esc(d.profile.github)}. Minimalist Engineering Portfolio.</p>
+                    <p>Last Deployed · <span id="deploy-timestamp" class="mono">2026-10-19T13:25:27Z</span></p>
+                    <p>© 2026 @${esc(d.profile.github)}. Award-Winning Modern Bento &amp; Minimalist Portfolio.</p>
                 </footer>
             `;
 
-            // 토스트 클립보드 복사
+            // 토스트 클립보드 복사 이벤트
             const toast = document.getElementById('toast');
             let toastTimer;
             const showToast = (msg) => {
@@ -921,13 +1142,28 @@
             const copyEmail = async (email) => {
                 try {
                     await navigator.clipboard.writeText(email);
-                    showToast('이메일 주소를 복사했습니다.');
+                    showToast('이메일 주소를 복사했습니다 ✓');
                 } catch {
                     showToast(email);
                 }
             };
             document.getElementById('copyEmail')?.addEventListener('click', e => copyEmail(e.currentTarget.dataset.email));
             document.getElementById('navCopy')?.addEventListener('click', () => copyEmail(d.profile.email));
+
+            // 스크롤 리빌 (Intersection Observer)
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('in');
+                            io.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.08 });
+                document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+            } else {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+            }
         });
     </script>
 </body>
