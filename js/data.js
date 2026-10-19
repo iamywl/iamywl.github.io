@@ -17,7 +17,7 @@ var resumeData = {
     stats: [
         { value: "99%", label: "Race Condition 탐지 F1-Score" },
         { value: "<10%", label: "eBPF 실시간 탐지 오버헤드" },
-        { value: "7", label: "공식 수상 & 우수논문" },
+        { value: "5", label: "공식 수상 & 우수논문" },
         { value: "< 1.2μs", label: "Kernel Hook Latency" }
     ],
 
@@ -113,9 +113,7 @@ var resumeData = {
         },
         { date: "2024.06.27", title: "우수논문상", org: "한국정보과학회", badge: "우수논문" },
         { date: "2024.07.31", title: "공공데이터 활용 창업경진대회 입상", org: "대구디지털혁신진흥원장", badge: "입상" },
-        { date: "2022.11.20", title: "창의적 종합 설계 경진대회 동상", org: "영남대학교", badge: "동상" },
         { date: "2022.11.02", title: "전국 대학생 소셜벤처 콩쿠르 우수상", org: "사회적 경제 대학 협의회장", badge: "우수상" },
-        { date: "2022.10.19", title: "DU Creative Festival 금상", org: "대구대학교 총장", badge: "금상" },
         { date: "2021.11.20", title: "경북 과학 해커톤 대회 우수상", org: "경북테크노파크 원장", badge: "우수상" }
     ],
 
